@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoTourAgency", "GoTourAgency\GoTourAgency.csproj", "{A454F8E2-1C71-4B88-894D-F0A3D3238B52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoTourAgency", "GoTourAgency\GoTourAgency.csproj", "{A454F8E2-1C71-4B88-894D-F0A3D3238B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoTourAgency.Infrastructure", "GoTourAgency.Infrastructure\GoTourAgency.Infrastructure.csproj", "{A173A6A8-B8B1-4170-A746-915E62C1E00F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoTourAgency.Core", "GoTourAgency.Core\GoTourAgency.Core.csproj", "{F05AFAA0-30C6-4562-9121-2ECB85E9129B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoTourAgency.Common", "GoTourAgency.Common\GoTourAgency.Common.csproj", "{6FA6B6E1-21FD-432C-A465-32255B684C72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{A454F8E2-1C71-4B88-894D-F0A3D3238B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A454F8E2-1C71-4B88-894D-F0A3D3238B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A454F8E2-1C71-4B88-894D-F0A3D3238B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A173A6A8-B8B1-4170-A746-915E62C1E00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A173A6A8-B8B1-4170-A746-915E62C1E00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A173A6A8-B8B1-4170-A746-915E62C1E00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A173A6A8-B8B1-4170-A746-915E62C1E00F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05AFAA0-30C6-4562-9121-2ECB85E9129B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05AFAA0-30C6-4562-9121-2ECB85E9129B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05AFAA0-30C6-4562-9121-2ECB85E9129B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05AFAA0-30C6-4562-9121-2ECB85E9129B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA6B6E1-21FD-432C-A465-32255B684C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA6B6E1-21FD-432C-A465-32255B684C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA6B6E1-21FD-432C-A465-32255B684C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA6B6E1-21FD-432C-A465-32255B684C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
