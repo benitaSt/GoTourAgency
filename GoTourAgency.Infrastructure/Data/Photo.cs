@@ -11,6 +11,8 @@ namespace GoTourAgency.Infrastructure.Data
         [Required]
         public string ImageUrl { get; set; } = null!;
 
+        public string? Description { get; set; }
+
         [Required]
         public int SiteId { get; set; }
         [ForeignKey(nameof(SiteId))]

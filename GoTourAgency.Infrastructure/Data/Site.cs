@@ -7,7 +7,7 @@ namespace GoTourAgency.Infrastructure.Data
     {
         public Site()
         {
-            Photoes = new List<Photo>();
+            Photos = new List<Photo>();
             SiteTours = new List<TourSite>();
             SavedBy = new List<UserSite>();
         }
@@ -33,7 +33,7 @@ namespace GoTourAgency.Infrastructure.Data
         [ForeignKey(nameof(CategoryId))]
         public virtual Category Category { get; set; } = null!;
 
-        public virtual List<Photo> Photoes { get; set; }
+        public virtual List<Photo> Photos { get; set; }
 
         public virtual List<TourSite> SiteTours { get; set; }
 

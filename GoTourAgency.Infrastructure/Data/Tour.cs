@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GoTourAgency.Infrastructure.Enums;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GoTourAgency.Infrastructure.Data
@@ -20,6 +22,20 @@ namespace GoTourAgency.Infrastructure.Data
         [Required]
         [StringLength(Common.ValidationConstants.tourDescriptionMaxLength)]
         public string Description { get; set; } = null!;
+
+        [Required]
+        public DateTime StartDateAndTime { get; set; }
+
+        [Required]
+        public DateTime EndDateAndTime { get; set; }
+
+        [Required]
+        public MeetingLocation MeetingLocation { get; set; }
+
+        [Required]
+        [Column(TypeName = "money")]
+        [Precision(18, 2)]
+        public decimal Price { get; set; } 
 
         [Required]
         public int RegionId { get; set; }

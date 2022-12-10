@@ -11,7 +11,7 @@ namespace GoTourAgency.Infrastructure.Data
         }
 
         [Key]
-        public override string Id { get; set; }
+        public override string Id { get; set; } = null!;
 
         public string? FirstName { get; set; }
 

@@ -18,8 +18,5 @@ namespace GoTourAgency.Infrastructure.Data
         public bool Visited { get; set; } = false;
 
         public bool Favourite { get; set; } = false;
-
-        [StringLength(Common.ValidationConstants.reviewMaxLength)]
-        public string? Review { get; set; }
     }
 }

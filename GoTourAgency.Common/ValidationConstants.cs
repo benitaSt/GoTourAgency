@@ -2,9 +2,6 @@
 {
     public static class ValidationConstants
     {
-        //UserSite
-        public const int reviewMaxLength = 420;
-
         //Tour
         public const int tourNameMaxLength = 100;
         public const int tourDescriptionMaxLength = 1000;

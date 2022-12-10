@@ -30,7 +30,7 @@ namespace GoTourAgency.Infrastructure.Data
 
         public DbSet<Category> Categories { get; set; } = null!;
 
-        public DbSet<Photo> Photoes { get; set; } = null!;
+        public DbSet<Photo> Photos { get; set; } = null!;
 
         public DbSet<UserSite> UsersSites { get; set; } = null!;
 
