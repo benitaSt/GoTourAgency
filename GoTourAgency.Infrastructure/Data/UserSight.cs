@@ -3,15 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GoTourAgency.Infrastructure.Data
 {
-    public class UserSite
+    public class UserSight
     {
         public string UserId { get; set; } = null!;
         [ForeignKey(nameof(UserId))]
         public virtual ApplicationUser User { get; set; } = null!;
 
-        public int SiteId { get; set; }
-        [ForeignKey(nameof(SiteId))]
-        public virtual Site Site { get; set; } = null!;
+        public int SightId { get; set; }
+        [ForeignKey(nameof(SightId))]
+        public virtual Sight Sight { get; set; } = null!;
 
         public bool InWishes { get; set; } = false;
 

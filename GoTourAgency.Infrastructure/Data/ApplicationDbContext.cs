@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using GoTourAgency.Infrastructure.Data.Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,17 +15,24 @@ namespace GoTourAgency.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder
-                .Entity<UserSite>()
-                .HasKey(us => new { us.UserId, us.SiteId });
+                .Entity<UserSight>()
+                .HasKey(us => new { us.UserId, us.SightId });
 
             builder
-                .Entity<TourSite>()
-                .HasKey(ts => new { ts.TourId, ts.SiteId });
+                .Entity<TourSight>()
+                .HasKey(ts => new { ts.TourId, ts.SightId });
+
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new AgentConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new RegionConfiguration());
+            builder.ApplyConfiguration(new PhotoConfiguration());
+            builder.ApplyConfiguration(new SightConfiguration());
 
             base.OnModelCreating(builder);
         }
 
-        public DbSet<Site> Sites { get; set; } = null!;
+        public DbSet<Sight> Sights { get; set; } = null!;
 
         public DbSet<Region> Regions { get; set; } = null!;
 
@@ -32,9 +40,9 @@ namespace GoTourAgency.Infrastructure.Data
 
         public DbSet<Photo> Photos { get; set; } = null!;
 
-        public DbSet<UserSite> UsersSites { get; set; } = null!;
+        public DbSet<UserSight> UsersSites { get; set; } = null!;
 
-        public DbSet<TourSite> ToursSites { get; set; } = null!;
+        public DbSet<TourSight> ToursSites { get; set; } = null!;
 
         public DbSet<Tour> Tours { get; set; } = null!;
 

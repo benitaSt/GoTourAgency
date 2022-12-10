@@ -14,8 +14,8 @@ namespace GoTourAgency.Infrastructure.Data
         public string? Description { get; set; }
 
         [Required]
-        public int SiteId { get; set; }
-        [ForeignKey(nameof(SiteId))]
-        public virtual Site Site { get; set; } = null!;
+        public int SightId { get; set; }
+        [ForeignKey(nameof(SightId))]
+        public virtual Sight Sight { get; set; } = null!;
     }
 }

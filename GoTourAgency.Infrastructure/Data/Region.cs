@@ -6,7 +6,7 @@ namespace GoTourAgency.Infrastructure.Data
     {
         public Region()
         {
-            Sites = new List<Site>();
+            Sights = new List<Sight>();
             Tours = new List<Tour>();
         }
 
@@ -17,7 +17,7 @@ namespace GoTourAgency.Infrastructure.Data
         [StringLength(Common.ValidationConstants.regionNameMaxLength)]
         public string Name { get; set; } = null!;
 
-        public virtual List<Site> Sites { get; set; }
+        public virtual List<Sight> Sights { get; set; }
 
         public virtual List<Tour> Tours { get; set; }
     }

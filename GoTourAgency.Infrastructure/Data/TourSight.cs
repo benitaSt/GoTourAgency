@@ -2,14 +2,14 @@
 
 namespace GoTourAgency.Infrastructure.Data
 {
-    public class TourSite
+    public class TourSight
     {
         public int TourId { get; set; }
         [ForeignKey(nameof(TourId))]
         public virtual Tour Tour { get; set; } = null!;
 
-        public int SiteId { get; set; }
-        [ForeignKey(nameof(SiteId))]
-        public virtual Site Site { get; set; } = null!;
+        public int SightId { get; set; }
+        [ForeignKey(nameof(SightId))]
+        public virtual Sight Sight { get; set; } = null!;
     }
 }

@@ -3,25 +3,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GoTourAgency.Infrastructure.Data
 {
-    public class Site
+    public class Sight
     {
-        public Site()
+        public Sight()
         {
             Photos = new List<Photo>();
-            SiteTours = new List<TourSite>();
-            SavedBy = new List<UserSite>();
+            SightTours = new List<TourSight>();
+            SavedBy = new List<UserSight>();
         }
 
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [StringLength(Common.ValidationConstants.siteNameMaxLength)]
+        [StringLength(Common.ValidationConstants.sightNameMaxLength)]
         public string Name { get; set; } = null!;
 
-        [Required]
-        [StringLength(Common.ValidationConstants.siteDescriptionMaxLength)]
-        public string Description { get; set; } = null!;
+        [StringLength(Common.ValidationConstants.sightDescriptionMaxLength)]
+        public string? Description { get; set; }
 
         [Required]
         public int RegionId { get; set; }
@@ -35,8 +34,8 @@ namespace GoTourAgency.Infrastructure.Data
 
         public virtual List<Photo> Photos { get; set; }
 
-        public virtual List<TourSite> SiteTours { get; set; }
+        public virtual List<TourSight> SightTours { get; set; }
 
-        public virtual List<UserSite> SavedBy { get; set; }
+        public virtual List<UserSight> SavedBy { get; set; }
     }
 }

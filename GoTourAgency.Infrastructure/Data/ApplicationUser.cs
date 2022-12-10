@@ -7,7 +7,7 @@ namespace GoTourAgency.Infrastructure.Data
     {
         public ApplicationUser()
         {
-            SavedSites = new List<UserSite>();
+            SavedSites = new List<UserSight>();
         }
 
         [Key]
@@ -17,6 +17,6 @@ namespace GoTourAgency.Infrastructure.Data
 
         public string? LastName { get; set; }
 
-        public virtual List<UserSite> SavedSites { get; set; }
+        public virtual List<UserSight> SavedSites { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace GoTourAgency.Infrastructure.Data
     {
         public Tour()
         {
-            TourSites = new List<TourSite>();
+            TourSights = new List<TourSight>();
         }
 
         [Key]
@@ -47,6 +47,6 @@ namespace GoTourAgency.Infrastructure.Data
         [ForeignKey(nameof(AgentId))]
         public virtual Agent Agent { get; set; } = null!;
 
-        public virtual List<TourSite> TourSites { get; set; }
+        public virtual List<TourSight> TourSights { get; set; }
     }
 }

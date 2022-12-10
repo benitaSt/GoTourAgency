@@ -4,6 +4,7 @@ using GoTourAgency.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GoTourAgency.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221210123055_SightNamedCorrectly")]
+    partial class SightNamedCorrectly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,14 +46,6 @@ namespace GoTourAgency.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Agents");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            PhoneNumber = "+359888888888",
-                            UserId = "dea12856-c198-4129-b3f3-b893d8395082"
-                        });
                 });
 
             modelBuilder.Entity("GoTourAgency.Infrastructure.Data.ApplicationUser", b =>
@@ -123,38 +117,6 @@ namespace GoTourAgency.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "dea12856-c198-4129-b3f3-b893d8395082",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "545bd192-d12a-4c8e-b348-24a78620fbb2",
-                            Email = "agent@mail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "agent@mail.com",
-                            NormalizedUserName = "agent@mail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA1zg6Rj4rnLvjyOKBudD05un8u0H+zGFYPAMZf4G7fhnKMk4yTehUKzZr+HNRwkeQ==",
-                            PhoneNumberConfirmed = false,
-                            TwoFactorEnabled = false,
-                            UserName = "agent@mail.com"
-                        },
-                        new
-                        {
-                            Id = "6d5800ce-d726-4fc8-83d9-d6b3ac1f591e",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "ed6caf1b-7dd0-45e0-88d1-74ded6c16c44",
-                            Email = "guest@mail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "guest@mail.com",
-                            NormalizedUserName = "guest@mail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPzzRUlefA+8R8xRTZxtFBap3ya2Bgu+jl1EtHfQg07knhc0mKTeQChru6ao+8z4NA==",
-                            PhoneNumberConfirmed = false,
-                            TwoFactorEnabled = false,
-                            UserName = "guest@mail.com"
-                        });
                 });
 
             modelBuilder.Entity("GoTourAgency.Infrastructure.Data.Category", b =>
@@ -173,23 +135,6 @@ namespace GoTourAgency.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "History"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Culture"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Nature"
-                        });
                 });
 
             modelBuilder.Entity("GoTourAgency.Infrastructure.Data.Photo", b =>
@@ -215,26 +160,6 @@ namespace GoTourAgency.Infrastructure.Migrations
                     b.HasIndex("SightId");
 
                     b.ToTable("Photos");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ImageUrl = "https://bulgariatravel.org/wp-content/uploads/2016/076_003_Chudnite_mostove.jpg_7362.jpg",
-                            SightId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ImageUrl = "http://1.bp.blogspot.com/-qWh0RQrN-Sw/VbVyDm_A5RI/AAAAAAAAEqQ/J2tEfZ266eY/s1600/Mighty%2Bpillars%2Bwith%2Bthe%2BFertility%2Bstone%2Bin%2Bthe%2Bmiddle%252C%2BThe%2BStone%2BForest%252C%2BVarna%252C%2BBulgaria.jpg",
-                            SightId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ImageUrl = "https://www.descopera.ro/wp-content/uploads/2016/09/15716132/1-wikimedia.jpg",
-                            SightId = 2
-                        });
                 });
 
             modelBuilder.Entity("GoTourAgency.Infrastructure.Data.Region", b =>
@@ -253,23 +178,6 @@ namespace GoTourAgency.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Regions");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "North"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Soutwest"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Southeast"
-                        });
                 });
 
             modelBuilder.Entity("GoTourAgency.Infrastructure.Data.Sight", b =>
@@ -284,6 +192,7 @@ namespace GoTourAgency.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -302,22 +211,6 @@ namespace GoTourAgency.Infrastructure.Migrations
                     b.HasIndex("RegionId");
 
                     b.ToTable("Sights");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 3,
-                            Name = "Chudni mostove",
-                            RegionId = 3
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 3,
-                            Name = "Pobiti kamani",
-                            RegionId = 3
-                        });
                 });
 
             modelBuilder.Entity("GoTourAgency.Infrastructure.Data.Tour", b =>

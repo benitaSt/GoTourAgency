@@ -6,7 +6,7 @@ namespace GoTourAgency.Infrastructure.Data
     {
         public Category()
         {
-            Sites = new List<Site>();
+            Sights = new List<Sight>();
         }
 
         [Key]
@@ -16,6 +16,6 @@ namespace GoTourAgency.Infrastructure.Data
         [StringLength(Common.ValidationConstants.categoryNameMaxLength)]        
         public string Name { get; set; } = null!;
 
-        public virtual List<Site> Sites { get; set; }
+        public virtual List<Sight> Sights { get; set; }
     }
 }
